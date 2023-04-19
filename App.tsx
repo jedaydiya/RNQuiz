@@ -5,12 +5,16 @@ import "react-native-url-polyfill/auto";
 import TodoList from "./TodoList";
 import HomeScreen from "./screens/HomeScreen";
 import MathQuizScreen from "./screens/MathQuizScreen";
+import RandomQuizScreen from "./screens/RandomQuizScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+
+// Parameter for type-safety in Stack Navigation
 export type RootStackParams = {
   Home: undefined;
   Quiz: undefined;
+  MultipleChoice: undefined;
 };
 export default function App() {
   const Stack = createNativeStackNavigator<RootStackParams>();
@@ -26,6 +30,15 @@ export default function App() {
           name="Quiz"
           component={MathQuizScreen}
           options={{ headerTitle: "Math Quiz", headerTitleAlign: "center" }}
+        />
+
+        <Stack.Screen
+          name="MultipleChoice"
+          component={RandomQuizScreen}
+          options={{
+            headerTitle: "Multiple Choice Quiz",
+            headerTitleAlign: "center",
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

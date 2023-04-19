@@ -24,7 +24,7 @@ const HomeScreen = () => {
         <Pressable
           className="p-4 m-2 bg-yellow-400 rounded-lg"
           onPress={() => {
-            navigation.navigate("Quiz");
+            navigation.navigate("MultipleChoice");
           }}
         >
           <Text className="text-center text-black">Multiple Choice Quiz</Text>
