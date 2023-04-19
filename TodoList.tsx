@@ -4,7 +4,7 @@ import { supabase } from "./supabase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import "react-native-url-polyfill/auto";
 
-// From Supabase
+// Type from Supabase
 type Item = {
   id: number;
   description: string;
@@ -17,7 +17,6 @@ interface Todo {
   description: string;
   completed: boolean;
 }
-
 const TodoList: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [todos, setTodos] = useState<Todo[]>([]);
