@@ -1,9 +1,15 @@
 import React from "react";
-
+import { View, Text } from "react-native";
 type Props = {};
 
 const RandomQuizScreen = (props: Props) => {
-  return <div>RandomQuizScreen</div>;
+  return (
+    <>
+      <View>
+        <Text>This is the Random Quiz screen</Text>
+      </View>
+    </>
+  );
 };
 
 export default RandomQuizScreen;
