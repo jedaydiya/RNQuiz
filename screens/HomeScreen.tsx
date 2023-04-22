@@ -6,7 +6,6 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParams } from "../App";
 import MathQuizIcon from "../assets/calculator.svg";
 import RandomQuizIcon from "../assets/studying.svg";
-import { MotiView } from "moti";
 type Props = {};
 
 const HomeScreen = () => {
@@ -14,13 +13,8 @@ const HomeScreen = () => {
     useNavigation<NativeStackNavigationProp<RootStackParams>>();
   return (
     <>
-      <ScrollView className="mt-10">
-        <MotiView
-          from={{ opacity: 0, translateY: 50 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 200 }}
-          className="mx-4 my-2 border-4 rounded-lg bg-gray-50"
-        >
+      <ScrollView>
+        <View className="mx-4 my-2 border-4 rounded-lg bg-gray-50">
           <MathQuizIcon width={400} height={300} />
           <Text className="px-2 mx-2 text-xl">Math Quiz</Text>
           <Pressable
@@ -31,14 +25,9 @@ const HomeScreen = () => {
           >
             <Text className="text-center text-black">Take Quiz</Text>
           </Pressable>
-        </MotiView>
+        </View>
 
-        <MotiView
-          from={{ opacity: 0, translateY: 50 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ delay: 200 }}
-          className="mx-4 my-2 border-4 rounded-lg bg-gray-50"
-        >
+        <View className="mx-4 my-2 border-4 rounded-lg bg-gray-50">
           <RandomQuizIcon width={400} height={300} />
           <Text className="px-2 mx-2 text-xl">Multiple Choice</Text>
           <Pressable
@@ -49,7 +38,7 @@ const HomeScreen = () => {
           >
             <Text className="text-center text-black">Take Quiz</Text>
           </Pressable>
-        </MotiView>
+        </View>
         <Text className="text-center text-slate-700">
           Created by jedaydiya.dev
         </Text>

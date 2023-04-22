@@ -8,8 +8,7 @@ import MathQuizScreen from "./screens/MathQuizScreen";
 import RandomQuizScreen from "./screens/RandomQuizScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import "react-native-reanimated";
-// import 'react-native-gesture-handler'r
+
 
 // Parameter for type-safety in Stack Navigation
 export type RootStackParams = {
@@ -25,7 +24,7 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ headerTitleAlign: "center", headerShown: false }}
+          options={{ headerTitleAlign: "center" }}
         />
         <Stack.Screen
           name="Quiz"
