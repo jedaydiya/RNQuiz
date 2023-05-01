@@ -36,7 +36,7 @@ const HomeScreen = () => {
                 <MathQuizIcon width={400} height={300} />
                 <Text className="px-2 mx-2 text-xl">Math Quiz</Text>
                 <Pressable
-                  className="p-4 m-2 bg-yellow-400 rounded-lg"
+                  className="p-4 m-2 bg-green-600 rounded-lg"
                   onPress={() => {
                     navigation.navigate("Quiz");
                   }}
@@ -59,7 +59,7 @@ const HomeScreen = () => {
                 <RandomQuizIcon width={400} height={300} />
                 <Text className="px-2 mx-2 text-xl">Multiple Choice</Text>
                 <Pressable
-                  className="p-4 m-2 bg-yellow-400 rounded-lg"
+                  className="p-4 m-2 bg-green-600 rounded-lg"
                   onPress={() => {
                     navigation.navigate("MultipleChoice");
                   }}
@@ -79,6 +79,7 @@ const HomeScreen = () => {
         </Text>
       </ScrollView>
     </>
+    
   );
 };
 

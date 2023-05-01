@@ -30,7 +30,7 @@ export default function App() {
         <Stack.Screen
           name="Quiz"
           component={MathQuizScreen}
-          options={{ headerTitle: "Math Quiz", headerTitleAlign: "center" }}
+          options={{ headerShown: false }}
         />
 
         <Stack.Screen
