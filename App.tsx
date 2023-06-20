@@ -37,8 +37,7 @@ export default function App() {
           name="MultipleChoice"
           component={RandomQuizScreen}
           options={{
-            headerTitle: "Multiple Choice Quiz",
-            headerTitleAlign: "center",
+            headerShown: false
           }}
         />
       </Stack.Navigator>

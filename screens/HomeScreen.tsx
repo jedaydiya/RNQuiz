@@ -79,7 +79,7 @@ const HomeScreen = () => {
         </Text>
       </ScrollView>
     </>
-    
+
   );
 };
 
