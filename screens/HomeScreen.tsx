@@ -7,9 +7,16 @@ import { RootStackParams } from "../App";
 import MathQuizIcon from "../assets/calculator.svg";
 import RandomQuizIcon from "../assets/studying.svg";
 import { MotiView, AnimatePresence, motify } from "moti";
+import { useFonts } from "expo-font";
 type Props = {};
 
 const HomeScreen = () => {
+  const [fontsLoaded] = useFonts({
+    'TiltWarp': require('../assets/fonts/TiltWarp-Regular.ttf'),
+  });
+  if (!fontsLoaded) {
+    return null;
+  }
   // React Navigation Hook because React Navigation does not unmount the last screen when use go to another screen
   const isFocused = useIsFocused();
   const key = isFocused ? Date.now() : null;
@@ -34,14 +41,14 @@ const HomeScreen = () => {
                 className="mx-4 my-2 border-4 rounded-lg bg-gray-50"
               >
                 <MathQuizIcon width={400} height={300} />
-                <Text className="px-2 mx-2 text-xl">Math Quiz</Text>
+                <Text style={{ fontFamily: 'TiltWarp' }} className="px-2 mx-2 text-xl">Math Quiz</Text>
                 <Pressable
                   className="p-4 m-2 bg-green-600 rounded-lg"
                   onPress={() => {
                     navigation.navigate("Quiz");
                   }}
                 >
-                  <Text className="text-center text-black">Take Quiz</Text>
+                  <Text style={{ fontFamily: 'TiltWarp' }} className="text-center text-black">Take Quiz</Text>
                 </Pressable>
               </MotiView>
 
@@ -57,14 +64,14 @@ const HomeScreen = () => {
                 className="mx-4 my-2 border-4 rounded-lg bg-gray-50"
               >
                 <RandomQuizIcon width={400} height={300} />
-                <Text className="px-2 mx-2 text-xl">Multiple Choice</Text>
+                <Text style={{ fontFamily: 'TiltWarp' }} className="px-2 mx-2 text-xl">Multiple Choice</Text>
                 <Pressable
                   className="p-4 m-2 bg-green-600 rounded-lg"
                   onPress={() => {
                     navigation.navigate("MultipleChoice");
                   }}
                 >
-                  <Text className="text-center text-black">Take Quiz</Text>
+                  <Text style={{ fontFamily: 'TiltWarp' }} className="text-center text-black">Take Quiz</Text>
                 </Pressable>
               </MotiView>
             </>
