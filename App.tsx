@@ -10,7 +10,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import "react-native-reanimated";
 import "react-native-gesture-handler";
-
+import { QuizProvider } from "./useContext/QuizContext";
+import { RandomQuizProvider } from "./useContext/RandomQuizContext";
 // Parameter for type-safety in Stack Navigation
 export type RootStackParams = {
   Home: undefined;
@@ -21,26 +22,30 @@ export default function App() {
   const Stack = createNativeStackNavigator<RootStackParams>();
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ headerTitleAlign: "center", headerShown: false }}
-        />
-        <Stack.Screen
-          name="Quiz"
-          component={MathQuizScreen}
-          options={{ headerShown: false }}
-        />
+      <QuizProvider>
+        <RandomQuizProvider>
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{ headerTitleAlign: "center", headerShown: false }}
+            />
+            <Stack.Screen
+              name="Quiz"
+              component={MathQuizScreen}
+              options={{ headerShown: false }}
+            />
 
-        <Stack.Screen
-          name="MultipleChoice"
-          component={RandomQuizScreen}
-          options={{
-            headerShown: false
-          }}
-        />
-      </Stack.Navigator>
+            <Stack.Screen
+              name="MultipleChoice"
+              component={RandomQuizScreen}
+              options={{
+                headerShown: false
+              }}
+            />
+          </Stack.Navigator>
+        </RandomQuizProvider>
+      </QuizProvider>
     </NavigationContainer>
   );
 }
